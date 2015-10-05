@@ -27,23 +27,30 @@ end
 class Army
 	attr_reader :stats
 	def initialize
-		@stats = {melee_attack: 0, ranged_attack: 0, melee_defense: 0, ranged_defense: 0}
+		@stats = {number: 0, melee_attack: 0, ranged_attack: 0, melee_defense: 0, ranged_defense: 0}
 	end
-	def add_unit(unit)
-		raise TypeError, "unit must be a kind of Unit" unless unit.kind_of? Unit
-		@stats.each_key do |attribute|
-			@stats[attribute] += case attribute
-			when :melee_attack
-				if unit.is_a? Melee then unit.melee_attack
-				else 0
+
+	def to_h
+		@stats
+	end
+	def add_units(*units)
+		units.each do |unit|
+			raise TypeError, "unit must be a kind of Unit" unless unit.kind_of? Unit
+			@stats.each_key do |attribute|
+				@stats[attribute] += case attribute
+				when :number then 1
+				when :melee_attack
+					if unit.is_a? Melee then unit.melee_attack
+					else 0
+					end
+				when :ranged_attack
+					if unit.is_a? Ranged then unit.ranged_atttack
+					else 0
+					end
+				else
+					unit.send attribute
 				end
-			when :ranged_attack
-				if unit.is_a? Ranged then unit.ranged_atttack
-				else 0
-				end
-			else unit.send attribute
 			end
 		end
 	end
 end
-
