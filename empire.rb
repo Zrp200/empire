@@ -47,6 +47,7 @@ class Ranged < Unit
 	CrossbowmanOfTheKingsguard = new 121, 14, 23
 	ScoutOfTheKingsguard = new 16, 64, 139
 	TravelingCrossbowman = new 135, 22, 30
+	Archer = new 10, 53, 55
 	RenegadeSpearThrower = new 14, 20, 139
 end
 class Army
