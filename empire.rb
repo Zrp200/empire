@@ -16,8 +16,22 @@ class Melee < Unit
 		@melee_attack =  attack
 		super(melee_defense, ranged_defense)
 	end
+	def attack_unit?
+		@melee_attack >= @melee_defense
+	end
+	def defense_unit?
+		@melee_attack <= @melee_defense
+	end
 
 	ArmedCivilian = new 3, 9, 9
+	Militia = new 8, 27, 24
+	Spearman = new 26, 26, 8
+	VeteranSpearman = new 15, 142, 52
+	Maceman = new 38, 38, 6
+	VeteranMaceman = new 118, 20, 6
+	Swordsman = new 61, 5, 3
+	Halberdier = new 17, 135, 45
+	TravelingKnight = new 146, 20, 9
 end
 class Ranged < Unit
 	attr_reader :ranged_attack
@@ -26,6 +40,14 @@ class Ranged < Unit
 		@ranged_attack = attack
 		super(melee_defense, ranged_defense)
 	end
+
+	Bowman = new 24, 8, 24
+	Crossbowman = new 36, 6, 36
+	VeteranCrossbowman = new 98, 16, 26
+	CrossbowmanOfTheKingsguard = new 121, 14, 23
+	ScoutOfTheKingsguard = new 16, 64, 139
+	TravelingCrossbowman = new 135, 22, 30
+	RenegadeSpearThrower = new 14, 20, 139
 end
 class Army
 	attr_reader :stats
@@ -53,7 +75,7 @@ class Army
 				else 0
 				end
 			when :ranged_attack
-				if unit.is_a? Ranged then unit.ranged_atttack
+				if unit.is_a? Ranged then unit.ranged_attack
 				else 0
 				end
 			else
