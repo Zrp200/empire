@@ -1,5 +1,6 @@
-class Unit
+class Unit # @abstract
 	attr_reader :melee_defense, :ranged_defense
+
 	def initialize(melee_defense, ranged_defense)
 		@melee_defense = melee_defense
 		@ranged_defense = ranged_defense
@@ -7,13 +8,17 @@ class Unit
 end
 class Melee < Unit
 	attr_reader :melee_attack
+
 	def initialize(attack, melee_defense, ranged_defense)
 		@melee_attack =  attack
 		super(melee_defense, ranged_defense)
 	end
+
+	ArmedCivilian = new 3, 9, 9
 end
 class Ranged < Unit
 	attr_reader :ranged_attack
+
 	def initialize(attack, melee_defense, ranged_defense)
 		@ranged_attack = attack
 		super(melee_defense, ranged_defense)
@@ -27,12 +32,18 @@ class Army
 	def add_unit(unit)
 		raise TypeError, "unit must be a kind of Unit" unless unit.kind_of? Unit
 		@stats.each_key do |attribute|
-			case attribute
-				when :ranged_attack then next unless unit == Ranged
-				when :melee_attack then next unless unit == Melee
+			@stats[attribute] += case attribute
+			when :melee_attack
+				if unit.is_a? Melee then unit.melee_attack
+				else 0
+				end
+			when :ranged_attack
+				if unit.is_a? Ranged then unit.ranged_atttack
+				else 0
+				end
+			else unit.send attribute
 			end
-			@stats[attribute] += unit.send attribute
-		end	
+		end
 	end
 end
 
