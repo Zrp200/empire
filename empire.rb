@@ -42,6 +42,7 @@ class Ranged < Unit
 	end
 
 	Bowman = new 24, 8, 24
+	Longbowman = new 20, 51, 125
 	Crossbowman = new 36, 6, 36
 	VeteranCrossbowman = new 98, 16, 26
 	CrossbowmanOfTheKingsguard = new 121, 14, 23
