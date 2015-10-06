@@ -40,6 +40,12 @@ class Ranged < Unit
 		@ranged_attack = attack
 		super(melee_defense, ranged_defense)
 	end
+	def attack_unit?
+		@ranged_attack >= @ranged_defense
+	end
+	def defense_unit?
+		@ranged_attack <= @ranged_defense
+	end 
 
 	Bowman = new 24, 8, 24
 	Longbowman = new 20, 51, 125
