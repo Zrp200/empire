@@ -92,7 +92,9 @@ class Army
 			end
 		end
 	end
-	def add_units(*units)
-		units.each {|unit| add_unit(unit)}
+	def add_units(units=Hash.new)
+		units.each_pair do |unit, amount| 
+			amount.times {add_unit unit}
+		end
 	end
 end
