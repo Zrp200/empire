@@ -59,7 +59,7 @@ class Ranged < Unit
 	RenegadeSpearThrower = new 14, 20, 139
 end
 class Army
-	attr_reader :stats
+	attr_reader :stats, :units
 	def initialize
 		@stats = {
 # TODO			looting_capacity: 0,
@@ -69,6 +69,7 @@ class Army
 			melee_defense: 0, 
 			ranged_defense: 0
 		}
+		@units = Hash.new(0)
 	end
 
 	def to_h
@@ -90,11 +91,21 @@ class Army
 			else
 				unit.send attribute
 			end
+			@units[unit] += 1
 		end
 	end
 	def add_units(units=Hash.new)
 		units.each_pair do |unit, amount| 
 			amount.times {add_unit unit}
 		end
+	end
+end
+class Castle
+	attr_reader :left_flank, :front, :right_flank, :courtyard
+	def initialize
+		@left_flank = Army.new
+		@front = Army.new
+		@right_flank = Army.new
+		@courtyard = Army.new
 	end
 end
