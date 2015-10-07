@@ -95,7 +95,7 @@ class Army
 				unit.send attribute
 			end
 		end
-		@units += 1
+		@units[unit] += 1
 	end
 	def add_units(units=Hash.new)
 		units.each_pair do |unit, amount| 
