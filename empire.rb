@@ -27,8 +27,11 @@ class Melee < Unit
 	Maceman = new 38, 38, 6
 	VeteranMaceman = new 118, 20, 6
 	Swordsman = new 61, 5, 3
+	VeteranSwordsman = new 111, 138, 72
 	TwoHandedSwordsman = new 109, 19, 5
+	VeteranTwoHandedSwordsman = new 125, 20, 6
 	Halberdier = new 17, 135, 45
+	VeteranHalberdier = new 15, 145, 55
 	TravelingKnight = new 146, 20, 9
 end
 class Ranged < Unit
@@ -47,10 +50,12 @@ class Ranged < Unit
 
 	Bowman = new 24, 8, 24
 	Longbowman = new 20, 51, 125
+	VeteranLongbowman = new  17, 61, 134
 	Crossbowman = new 36, 6, 36
 	VeteranCrossbowman = new 98, 16, 26
 	CrossbowmanOfTheKingsguard = new 121, 14, 23
 	HeavyCrossbowman = new 92, 15, 24
+	VeteranHeavyCrossbowman = new 114, 16, 26
 	ScoutOfTheKingsguard = new 16, 64, 139
 	TravelingCrossbowman = new 135, 22, 30
 	Archer = new 10, 53, 55
