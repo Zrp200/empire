@@ -20,7 +20,7 @@ class Melee < Unit
 		@melee_attack <= @melee_defense
 	end
 
-	ArmedCivilian = new 3, 9, 9
+	ArmedCitizen = new 3, 9, 9
 	Militia = new 8, 27, 24
 	Spearman = new 26, 26, 8
 	VeteranSpearman = new 15, 142, 52
@@ -89,8 +89,8 @@ class Army
 			else
 				unit.send attribute
 			end
-			@units[unit] += 1
 		end
+		@units += 1
 	end
 	def add_units(units=Hash.new)
 		units.each_pair do |unit, amount| 
