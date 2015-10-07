@@ -1,7 +1,4 @@
-require "singleton"
 class Unit # @abstract
-	include Singleton
-
 	attr_reader :melee_defense, :ranged_defense
 
 	def initialize(melee_defense, ranged_defense)
@@ -30,6 +27,7 @@ class Melee < Unit
 	Maceman = new 38, 38, 6
 	VeteranMaceman = new 118, 20, 6
 	Swordsman = new 61, 5, 3
+	TwoHandedSwordsman = new 109, 19, 5
 	Halberdier = new 17, 135, 45
 	TravelingKnight = new 146, 20, 9
 end
