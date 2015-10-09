@@ -19,22 +19,6 @@ class Melee < Unit
 	def defense_unit?
 		@melee_attack <= @melee_defense
 	end
-
-	ArmedCitizen = new 3, 9, 9
-	Militia = new 8, 27, 24
-	Spearman = new 26, 26, 8
-	VeteranSpearman = new 15, 142, 52
-	Maceman = new 38, 38, 6
-	VeteranMaceman = new 118, 20, 6
-	Swordsman = new 61, 5, 3
-	VeteranSwordsman = new 111, 138, 72
-	TwoHandedSwordsman = new 109, 19, 5
-	VeteranTwoHandedSwordsman = new 125, 20, 6
-	Halberdier = new 17, 135, 45
-	VeteranHalberdier = new 15, 145, 55
-	TravelingKnight = new 146, 20, 9
-	FlameBearer = new 14, 170, 49
-	DemonHorror = new 185, 19, 5
 end
 class Ranged < Unit
 	attr_reader :ranged_attack
@@ -49,21 +33,6 @@ class Ranged < Unit
 	def defense_unit?
 		@ranged_attack <= @ranged_defense
 	end 
-
-	Bowman = new 24, 8, 24
-	CompositeBowman = new 16, 54, 159
-	Longbowman = new 20, 51, 125
-	VeteranLongbowman = new  17, 61, 134
-	Crossbowman = new 36, 6, 36
-	VeteranCrossbowman = new 98, 16, 26
-	CrossbowmanOfTheKingsguard = new 121, 14, 23
-	HeavyCrossbowman = new 92, 15, 24
-	VeteranHeavyCrossbowman = new 114, 16, 26
-	ScoutOfTheKingsguard = new 16, 64, 139
-	TravelingCrossbowman = new 135, 22, 30
-	Archer = new 10, 53, 55
-	RenegadeSpearThrower = new 14, 20, 139
-	DeathlyHorror = new 162, 15, 24
 end
 class Army
 	attr_reader :stats, :units
