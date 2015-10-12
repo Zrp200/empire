@@ -30,3 +30,4 @@ Archer = Ranged.new 10, 53, 55
 SpearThrower = Ranged.new 14, 35, 139
 RenegadeSpearThrower = Ranged.new 14, 20, 139
 DeathlyHorror = Ranged.new 162, 15, 24
+CultistBowman = Ranged.new 92, 51, 125
