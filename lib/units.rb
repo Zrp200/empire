@@ -34,8 +34,11 @@ DemonHorror = Melee.new 185, 19, 5
 DeathlyHorror = Ranged.new 162, 15, 24
 
 Lancer = Melee.new 13, 150, 34
+KhanGuards = Melee.new 175, 54, 50, 32, 28, 5
+VeteranSaberCleaver = Melee.new 149, 20, 15, 35, 28, 4
+VeteranSlingshot = Ranged.new 139, 19, 24, 32, 28, 4
 
-Bowman = Ranged.new 24, 8, 24
+Bowman = Ranged.new 24, 8, 24, 13, 75, 2
 
 CompositeBowman = Ranged.new 16, 54, 159
 
@@ -57,3 +60,6 @@ SpearThrower = Ranged.new 14, 35, 139
 RenegadeSpearThrower = Ranged.new 14, 20, 139
 
 CultistBowman = Ranged.new 92, 51, 125
+
+DemonSlayer = Melee.new 178, 16, 5, 10, 70, 6
+Assassin = Ranged.new 152, 11, 17, 8, 70, 6
