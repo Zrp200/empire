@@ -1,7 +1,8 @@
 require_relative "empire.rb"
 
-ArmedCitizen = Melee.new 3, 9, 9 # Cannot be used in attacks in-game
-Militia = Melee.new 8, 27, 24 # Cannot be used in attacks in-game
+# Cannot be moved in-game
+	ArmedCitizen = Melee.new 3, 9, 9
+	Militia = Melee.new 8, 27, 24
 
 Spearman = Melee.new 26, 26, 8, 14, 75, 2
 VeteranSpearman = Melee.new 15, 142, 52, 14, 26, 4
@@ -15,8 +16,20 @@ VeteranSwordsman = Melee.new 111, 138, 72, 29, 28, 6
 TwoHandedSwordsman = Melee.new 109, 19, 5, 28, 18, 4
 VeteranTwoHandedSwordsman = Melee.new 125, 20, 6
 
+# Recruitable units found in Everwinter Glacier:
+	RenegadeNorsemanWarrior = Melee.new 103, 129, 41, 28, 25, 4
+	RenegadeNorsmanBowman = Ranged.new 86, 48, 119, 28, 25, 4
+	Wolfhound = Melee.new 50, 50, 0, 0, 80, 30
+	Barbarian = Melee.new 113, 9, 4, 50, 25, 4
+
 Halberdier = Melee.new 17, 135, 45, 18, 19, 4
 VeteranHalberdier = Melee.new 15, 145, 55
+
+FrostBowman = Ranged.new 135, 19, 28, 21, 32, 4
+MasterFrostBowman = Ranged.new 162, 15, 24, 40, 28, 5
+
+BoneHuntress = Melee.new 145, 21, 8, 25, 32, 4
+MasterBoneHuntress = Melee.new 185, 19, 5, 35, 28, 5
 
 TravelingKnight = Melee.new 146, 20, 9
 TravelingCrossbowman = Ranged.new 135, 22, 30
@@ -24,9 +37,9 @@ TravelingCrossbowman = Ranged.new 135, 22, 30
 KnightOfTheEliteGuard = Melee.new 140, 18, 5, 33, 28, 4
 CrossbowmanOfTheEliteGuard = Ranged.new 129, 14, 23, 29, 28, 4
 
-# Auxililary Units
-MuscleMan = Melee.new 116, 142, 52, 25
-Marksman = Ranged.new 97, 59, 132, 25, 30
+# Auxililary Units:
+	MuscleMan = Melee.new 116, 142, 52, 25
+	Marksman = Ranged.new 97, 59, 132, 25, 30
 
 FlameBearer = Melee.new 14, 170, 49, 3, 25, 4
 
@@ -39,6 +52,7 @@ VeteranSaberCleaver = Melee.new 149, 20, 15, 35, 28, 4
 VeteranSlingshot = Ranged.new 139, 19, 24, 32, 28, 4
 
 Bowman = Ranged.new 24, 8, 24, 13, 75, 2
+VeteranBowman = Ranged.new 18, 59, 132, 13, 27, 4
 
 CompositeBowman = Ranged.new 16, 54, 159
 
@@ -63,3 +77,10 @@ CultistBowman = Ranged.new 92, 51, 125
 
 DemonSlayer = Melee.new 178, 16, 5, 10, 70, 6
 Assassin = Ranged.new 152, 11, 17, 8, 70, 6
+	
+# Dies after attacking 
+	RenegadeSharkToothWarrior = Melee.new 146, 20, 9, 0, 50, 4
+	RenegadeStoneSmasher = Ranged.new 135, 22, 30, 0, 50, 4
+
+RenegadeSwashbuckler = Melee.new 166, 11, 3, 90, 28, 6 # Lots of fire damage
+RenegadeSailRipper = Ranged.new 144, 8, 14, 90, 28, 6 

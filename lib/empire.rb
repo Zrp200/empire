@@ -39,7 +39,7 @@ class Ranged < Unit
 end
 class Army
 	attr_reader :stats, :units
-	def initialize
+	def initialize(units = Hash.new(0))
 		@stats = {
 			number: 0, 
 			melee_attack: 0, 
@@ -51,9 +51,13 @@ class Army
 			food_consumption: 0
 		}
 		@units = Hash.new(0)
+		add_units units
 	end
 
 	def to_h
+		@stats
+	end
+	def []
 		@stats
 	end
 	def add_unit(unit)
@@ -89,8 +93,8 @@ class Army
 		end
 	end
 	def attack_distribution
-		total = @stats[:ranged_attack] + @stats[:melee_attack].to_f
-		"#{@stats[:melee_attack]/total} melee : #{@stats[:ranged_attack]/total}"
+		total = (@stats[:ranged_attack] + @stats[:melee_attack]).to_f
+		"#{((@stats[:melee_attack]/total)*100).round}% melee : #{((@stats[:ranged_attack]/total)*100).round}% ranged"
 	end
 end
 class Castle
