@@ -88,6 +88,10 @@ class Army
 			amount.times {add_unit unit}
 		end
 	end
+	def attack_distribution
+		total = @stats[:ranged_attack] + @stats[:melee_attack].to_f
+		"#{@stats[:melee_attack]/total} melee : #{@stats[:ranged_attack]/total}"
+	end
 end
 class Castle
 	attr_reader :left_flank, :front, :right_flank, :courtyard
