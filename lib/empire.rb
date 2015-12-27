@@ -57,8 +57,8 @@ class Army
 	def to_h
 		@stats
 	end
-	def []
-		@stats
+	def [](key)
+		@stats[key]
 	end
 	def add_unit(unit)
 		raise TypeError, "unit must be a kind of Unit" unless unit.kind_of? Unit
@@ -92,6 +92,10 @@ class Army
 			amount.times {add_unit unit}
 		end
 	end
+	def defense_distribution
+		total = (@stats[:ranged_defense] + @stats[:melee_defense]).to_f
+		"#{(@stats[:melee_defense]/total*100).round}% melee : #{((@stats[:ranged_defense]/total)*100).round}% ranged"
+	end  
 	def attack_distribution
 		total = (@stats[:ranged_attack] + @stats[:melee_attack]).to_f
 		"#{((@stats[:melee_attack]/total)*100).round}% melee : #{((@stats[:ranged_attack]/total)*100).round}% ranged"
@@ -104,5 +108,9 @@ class Castle
 		@front = Army.new
 		@right_flank = Army.new
 		@courtyard = Army.new
+	end
+	def unit_distribution
+		total = (left_flank[:number] + front[:number] + right_flank[:number]).to_f
+		"#{(left_flank[:number]/total.to_f*100).round}% : #{(front.stats[:number]/total*100).round}% : #{(right_flank.stats[:number]/total*100).round}%"
 	end
 end
